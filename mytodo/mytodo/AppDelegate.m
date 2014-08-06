@@ -20,6 +20,7 @@
 {
     self.menuBarController = [[MenuBarController alloc] init];
     self.menuBarController.managedObjectContext = [self managedObjectContext];
+
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.maximedavid.kkkk" in the user's Application Support directory.

@@ -10,9 +10,34 @@
 
 @implementation CustomWindow
 
-- (BOOL)canBecomeKeyWindow
+
+- (id)initWithContentRect:(NSRect)contentRect
+                styleMask:(NSUInteger)windowStyle
+                  backing:(NSBackingStoreType)bufferingType
+                    defer:(BOOL)deferCreation
 {
+    self = [super
+            initWithContentRect:contentRect
+            styleMask:windowStyle
+            backing:bufferingType
+            defer:deferCreation];
+    
+    [self setHasShadow:YES];
+    
+    
+    
+    return self;
+}
+
+
+- (BOOL)canBecomeKeyWindow {
     return YES;
 }
+
+- (BOOL)canBecomeMainWindow {
+    return YES;
+}
+
+
 
 @end

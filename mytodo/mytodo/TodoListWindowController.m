@@ -56,7 +56,7 @@
         [todoView.textField setEnabled:YES];
         [todoView.textField setEditable:YES];
         
-        
+        [self setupWindowForEvents];
         
         
         [self.window setOpaque:NO];
@@ -109,7 +109,7 @@
     
     if (result == nil) {
         
-        result = [[TableCellView alloc] initWithFrame:CGRectMake(TASK_PADDING_LEFT, (TASK_BOX_HEIGHT-TASK_HEIGHT)/2, 0.98*TASK_WIDTH, TASK_HEIGHT)];
+        result = [[TableCellView alloc] initWithFrame:CGRectMake(0, (TASK_BOX_HEIGHT-TASK_HEIGHT)/2, POPUP_WIDTH, TASK_HEIGHT)];
         result.identifier = @"MyView";
     }
     
@@ -134,20 +134,32 @@
     
     return result;
     
+    
+    
 }
+
+
+
+
 
 - (void)windowDidLoad
 {
     [super windowDidLoad];
     
 
-
-    
-
-
-    
 }
 
+
+
+- (void)setupWindowForEvents{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowDidResignKey:) name:NSWindowDidResignMainNotification object:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowDidResignKey:) name:NSWindowDidResignKeyNotification object:self];
+}
+
+-(void)windowDidResignKey:(NSNotification *)note {
+    NSLog(@"notification");
+    [self close];
+}
 
 
 

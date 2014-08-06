@@ -20,9 +20,9 @@
         tf = [[NSTextField alloc] initWithFrame:CGRectMake(frame.origin.x+7, frame.origin.y, frame.size.width, frame.size.height)];
         borderLeft = [[CustomBackgroundView alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, 8, frame.size.height)];
         [tf setFont:[NSFont fontWithName:@"Verdana" size:15]];
-        [tf setBackgroundColor:[NSColor colorWithCalibratedRed:239./255 green:240./255 blue:242./255 alpha:1]];
+        [tf setBackgroundColor:[NSColor colorWithCalibratedRed:230./255 green:230./255 blue:230./255 alpha:1]];
         [tf setBezeled: NO];
-        [tf setBackgroundColor:[NSColor colorWithCalibratedRed:189./255 green:195./255 blue:199./255 alpha:1]];
+        //[tf setBackgroundColor:[NSColor colorWithCalibratedRed:189./255 green:195./255 blue:199./255 alpha:1]];
         
 
         [tf setEnabled:NO];

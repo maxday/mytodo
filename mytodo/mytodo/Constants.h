@@ -5,7 +5,7 @@
 #define TASK_HEIGHT 35.0
 #define TASK_BOX_HEIGHT 35.0
 #define TASK_WIDTH 260.0
-#define TASK_PADDING_LEFT 10.0
+#define TASK_PADDING_LEFT -1.0
 #define NEW_TASK_PADDING 10.0
 
 

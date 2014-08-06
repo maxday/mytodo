@@ -78,12 +78,12 @@
 		847C16B11991F87700729F9E /* CustomWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomWindow.h; sourceTree = "<group>"; };
 		847C16B21991F87700729F9E /* CustomWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomWindow.m; sourceTree = "<group>"; };
 		847C16B71992032E00729F9E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		847C16B8199208C300729F9E /* TableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCellView.h; sourceTree = "<group>"; };
-		847C16B9199208C300729F9E /* TableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCellView.m; sourceTree = "<group>"; };
-		847C16BB1992112200729F9E /* CustomBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBackgroundView.h; sourceTree = "<group>"; };
-		847C16BC1992112200729F9E /* CustomBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBackgroundView.m; sourceTree = "<group>"; };
-		847C16BE1992137900729F9E /* CustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTextField.h; sourceTree = "<group>"; };
-		847C16BF1992137900729F9E /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTextField.m; sourceTree = "<group>"; };
+		847C16B8199208C300729F9E /* TableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableCellView.h; path = ../TableCellView.h; sourceTree = "<group>"; };
+		847C16B9199208C300729F9E /* TableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableCellView.m; path = ../TableCellView.m; sourceTree = "<group>"; };
+		847C16BB1992112200729F9E /* CustomBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomBackgroundView.h; path = ../CustomBackgroundView.h; sourceTree = "<group>"; };
+		847C16BC1992112200729F9E /* CustomBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomBackgroundView.m; path = ../CustomBackgroundView.m; sourceTree = "<group>"; };
+		847C16BE1992137900729F9E /* CustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTextField.h; path = ../CustomTextField.h; sourceTree = "<group>"; };
+		847C16BF1992137900729F9E /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTextField.m; path = ../CustomTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,12 +110,6 @@
 		847C16131991BCC600729F9E = {
 			isa = PBXGroup;
 			children = (
-				847C16B8199208C300729F9E /* TableCellView.h */,
-				847C16B9199208C300729F9E /* TableCellView.m */,
-				847C16BE1992137900729F9E /* CustomTextField.h */,
-				847C16BF1992137900729F9E /* CustomTextField.m */,
-				847C16BB1992112200729F9E /* CustomBackgroundView.h */,
-				847C16BC1992112200729F9E /* CustomBackgroundView.m */,
 				847C16251991BCC600729F9E /* mytodo */,
 				847C16431991BCC600729F9E /* mytodoTests */,
 				847C161E1991BCC600729F9E /* Frameworks */,
@@ -155,6 +149,12 @@
 		847C16251991BCC600729F9E /* mytodo */ = {
 			isa = PBXGroup;
 			children = (
+				847C16B8199208C300729F9E /* TableCellView.h */,
+				847C16B9199208C300729F9E /* TableCellView.m */,
+				847C16BE1992137900729F9E /* CustomTextField.h */,
+				847C16BF1992137900729F9E /* CustomTextField.m */,
+				847C16BB1992112200729F9E /* CustomBackgroundView.h */,
+				847C16BC1992112200729F9E /* CustomBackgroundView.m */,
 				847C16531991BD1900729F9E /* icons */,
 				847C16561991BD1900729F9E /* MenuBarController.h */,
 				847C16571991BD1900729F9E /* MenuBarController.m */,

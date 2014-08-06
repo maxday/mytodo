@@ -96,8 +96,8 @@
 - (void) addTask:(NSString *)title {
     Task* task = [NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:managedObjectContext];
     
-    if(title.length > 15)
-        title = [title substringToIndex:15];
+    if(title.length > 25)
+        title = [title substringToIndex:25];
     
 
     
