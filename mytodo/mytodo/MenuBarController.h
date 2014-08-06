@@ -16,4 +16,6 @@
 
 @property (nonatomic, retain) TodoListWindowController* todoListWindowController;
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end

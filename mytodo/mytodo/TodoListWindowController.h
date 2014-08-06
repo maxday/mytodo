@@ -12,6 +12,9 @@
 @interface TodoListWindowController : NSWindowController <NSWindowDelegate, NSTableViewDataSource, NSTableViewDelegate>
 
 @property (nonatomic, retain) View* todoView;
+@property (nonatomic, retain) NSArray* dataTask;
+
+
 
 
 @property (readwrite) BOOL openPanel;
@@ -20,5 +23,6 @@
 
 
 - (void)openTodoPanel;
+- (id)initWithData:(NSArray*) data;
 
 @end

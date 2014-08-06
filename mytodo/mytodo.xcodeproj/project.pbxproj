@@ -24,6 +24,8 @@
 		847C16611991C10400729F9E /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847C165F1991C10400729F9E /* icon@2x.png */; };
 		847C16641991C1E100729F9E /* TodoListWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C16631991C1E100729F9E /* TodoListWindowController.m */; };
 		847C16671991C40800729F9E /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C16661991C40800729F9E /* View.m */; };
+		847C16AD1991E79000729F9E /* mytodo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 847C16AB1991E79000729F9E /* mytodo.xcdatamodeld */; };
+		847C16B01991E84400729F9E /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C16AF1991E84400729F9E /* Task.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,9 @@
 		847C16631991C1E100729F9E /* TodoListWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoListWindowController.m; sourceTree = "<group>"; };
 		847C16651991C40800729F9E /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
 		847C16661991C40800729F9E /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
+		847C16AC1991E79000729F9E /* mytodo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mytodo.xcdatamodel; sourceTree = "<group>"; };
+		847C16AE1991E84400729F9E /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		847C16AF1991E84400729F9E /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +150,9 @@
 				847C16341991BCC600729F9E /* MainMenu.xib */,
 				847C16371991BCC600729F9E /* Images.xcassets */,
 				847C16261991BCC600729F9E /* Supporting Files */,
+				847C16AB1991E79000729F9E /* mytodo.xcdatamodeld */,
+				847C16AE1991E84400729F9E /* Task.h */,
+				847C16AF1991E84400729F9E /* Task.m */,
 			);
 			path = mytodo;
 			sourceTree = "<group>";
@@ -291,6 +299,8 @@
 				847C165C1991BD1900729F9E /* MenuBarController.m in Sources */,
 				847C165D1991BD1900729F9E /* StatusItemView.m in Sources */,
 				847C16671991C40800729F9E /* View.m in Sources */,
+				847C16AD1991E79000729F9E /* mytodo.xcdatamodeld in Sources */,
+				847C16B01991E84400729F9E /* Task.m in Sources */,
 				847C16641991C1E100729F9E /* TodoListWindowController.m in Sources */,
 				847C16331991BCC600729F9E /* AppDelegate.m in Sources */,
 				847C162C1991BCC600729F9E /* main.m in Sources */,
@@ -506,6 +516,7 @@
 				847C164F1991BCC700729F9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		847C16501991BCC700729F9E /* Build configuration list for PBXNativeTarget "mytodoTests" */ = {
 			isa = XCConfigurationList;
@@ -514,8 +525,22 @@
 				847C16521991BCC700729F9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		847C16AB1991E79000729F9E /* mytodo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				847C16AC1991E79000729F9E /* mytodo.xcdatamodel */,
+			);
+			currentVersion = 847C16AC1991E79000729F9E /* mytodo.xcdatamodel */;
+			path = mytodo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 847C16141991BCC600729F9E /* Project object */;
 }

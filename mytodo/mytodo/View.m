@@ -30,6 +30,7 @@
         
        // [self addSubview:todoTableView];
         [todoTableView setBackgroundColor:[NSColor greenColor]];
+        [todoTableView setHeaderView:nil];
         
         
         

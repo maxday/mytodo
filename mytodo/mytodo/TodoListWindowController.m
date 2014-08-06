@@ -7,6 +7,8 @@
 //
 
 #import "TodoListWindowController.h"
+#import "Task.h"
+
 
 
 #define OPEN_DURATION .15
@@ -24,12 +26,14 @@
 
 @implementation TodoListWindowController
 @synthesize todoView;
+@synthesize dataTask;
 
-- (id)init
+
+- (id)initWithData:(NSArray*) data
 {
     self = [super init];
     if (self) {
-        
+        self.dataTask = data;
         NSRect frame = NSMakeRect(100, 100, 200, 200);
         NSUInteger styleMask =  NSBorderlessWindowMask;
         NSRect rect = [NSWindow contentRectForFrameRect:frame styleMask:styleMask];
@@ -44,7 +48,6 @@
         todoView.todoTableView.delegate = self;
         todoView.todoTableView.dataSource = self;
         
-
         [self.window.contentView addSubview:todoView];
  
         
@@ -68,7 +71,7 @@
 }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
-    return 30;
+    return [dataTask count];
 }
 
 - (CGFloat) tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
@@ -89,7 +92,7 @@
         result.identifier = @"MyView";
     }
     
-    result.stringValue = @"coucouuuu je suis une tache";
+    result.stringValue = [[dataTask objectAtIndex:row] nameTask];
     
     // Return the result
     return result;
@@ -103,5 +106,7 @@
 
 
 }
+
+ 
 
 @end
