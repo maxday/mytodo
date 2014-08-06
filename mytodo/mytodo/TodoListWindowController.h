@@ -7,7 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#include "View.h"
 
-@interface TodoListWindowController : NSWindowController
+@interface TodoListWindowController : NSWindowController <NSWindowDelegate, NSTableViewDataSource, NSTableViewDelegate>
+
+@property (nonatomic, retain) View* todoView;
+
+
+@property (readwrite) BOOL openPanel;
+
+
+
+
+- (void)openTodoPanel;
 
 @end

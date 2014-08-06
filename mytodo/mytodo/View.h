@@ -10,4 +10,7 @@
 
 @interface View : NSView
 
+@property(nonatomic, retain) NSTextField* textField;
+@property(nonatomic, retain) NSTableView* todoTableView;
+
 @end

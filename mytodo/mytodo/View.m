@@ -9,21 +9,51 @@
 #import "View.h"
 
 @implementation View
+@synthesize textField;
+@synthesize todoTableView;
 
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code here.
+        
+        textField = [[NSTextField alloc] initWithFrame:frame];
+        [textField setBackgroundColor:[NSColor redColor]];
+        [textField setStringValue:@"COUCOU"];
+        //[self addSubview:textField];
+        
+        todoTableView = [[NSTableView alloc] initWithFrame:frame];
+        
+        NSTableColumn* column1 = [[NSTableColumn alloc] initWithIdentifier:@"Col1"];
+        [column1 setWidth:0.95*frame.size.width];
+        [todoTableView addTableColumn:column1];
+        
+       // [self addSubview:todoTableView];
+        [todoTableView setBackgroundColor:[NSColor greenColor]];
+        
+        
+        
+        
+        NSScrollView* scrollView = [[NSScrollView alloc] initWithFrame:frame];
+        
+        [scrollView setDocumentView: todoTableView];
+        [scrollView setHasVerticalScroller:YES];
+   
+        [self addSubview:scrollView];
+        
+        
+        
     }
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect
-{
+- (void) drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     
-    // Drawing code here.
+    // This next line sets the the current fill color parameter of the Graphics Context
+    [[NSColor whiteColor] setFill];
+    // This next function fills a rect the same as dirtyRect with the current fill color of the Graphics Context.
+    NSRectFill(dirtyRect);
+    // You might want to use _bounds or self.bounds if you want to be sure to fill the entire bounds rect of the view.
 }
-
 @end
