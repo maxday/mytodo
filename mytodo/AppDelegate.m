@@ -13,10 +13,12 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize menuBarController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    self.menuBarController = [[MenuBarController alloc] init];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.maximedavid.mytodo" in the user's Application Support directory.

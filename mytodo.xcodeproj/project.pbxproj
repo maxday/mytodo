@@ -19,6 +19,10 @@
 		844B30F21991A18600E461B2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844B30CE1991A18600E461B2 /* Cocoa.framework */; };
 		844B30FA1991A18600E461B2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 844B30F81991A18600E461B2 /* InfoPlist.strings */; };
 		844B30FC1991A18600E461B2 /* mytodoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B30FB1991A18600E461B2 /* mytodoTests.m */; };
+		844B31071991AF9A00E461B2 /* MenuBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B31061991AF9A00E461B2 /* MenuBarController.m */; };
+		844B310A1991B01200E461B2 /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B31091991B01200E461B2 /* StatusItemView.m */; };
+		844B310E1991B28300E461B2 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 844B310C1991B28300E461B2 /* icon.png */; };
+		844B310F1991B28300E461B2 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844B310D1991B28300E461B2 /* icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,12 @@
 		844B30F71991A18600E461B2 /* mytodoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mytodoTests-Info.plist"; sourceTree = "<group>"; };
 		844B30F91991A18600E461B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		844B30FB1991A18600E461B2 /* mytodoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mytodoTests.m; sourceTree = "<group>"; };
+		844B31051991AF9A00E461B2 /* MenuBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuBarController.h; sourceTree = "<group>"; };
+		844B31061991AF9A00E461B2 /* MenuBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuBarController.m; sourceTree = "<group>"; };
+		844B31081991B01200E461B2 /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
+		844B31091991B01200E461B2 /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
+		844B310C1991B28300E461B2 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		844B310D1991B28300E461B2 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +127,13 @@
 		844B30D41991A18600E461B2 /* mytodo */ = {
 			isa = PBXGroup;
 			children = (
+				844B310B1991B28300E461B2 /* icons */,
 				844B30E01991A18600E461B2 /* AppDelegate.h */,
 				844B30E11991A18600E461B2 /* AppDelegate.m */,
+				844B31051991AF9A00E461B2 /* MenuBarController.h */,
+				844B31061991AF9A00E461B2 /* MenuBarController.m */,
+				844B31081991B01200E461B2 /* StatusItemView.h */,
+				844B31091991B01200E461B2 /* StatusItemView.m */,
 				844B30E31991A18600E461B2 /* MainMenu.xib */,
 				844B30E91991A18600E461B2 /* Images.xcassets */,
 				844B30E61991A18600E461B2 /* mytodo.xcdatamodeld */,
@@ -155,6 +170,15 @@
 				844B30F81991A18600E461B2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		844B310B1991B28300E461B2 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				844B310C1991B28300E461B2 /* icon.png */,
+				844B310D1991B28300E461B2 /* icon@2x.png */,
+			);
+			path = icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +258,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				844B30D91991A18600E461B2 /* InfoPlist.strings in Resources */,
+				844B310E1991B28300E461B2 /* icon.png in Resources */,
 				844B30EA1991A18600E461B2 /* Images.xcassets in Resources */,
 				844B30DF1991A18600E461B2 /* Credits.rtf in Resources */,
 				844B30E51991A18600E461B2 /* MainMenu.xib in Resources */,
+				844B310F1991B28300E461B2 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +281,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844B31071991AF9A00E461B2 /* MenuBarController.m in Sources */,
 				844B30E21991A18600E461B2 /* AppDelegate.m in Sources */,
 				844B30E81991A18600E461B2 /* mytodo.xcdatamodeld in Sources */,
+				844B310A1991B01200E461B2 /* StatusItemView.m in Sources */,
 				844B30DB1991A18600E461B2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +498,7 @@
 				844B31011991A18600E461B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		844B31021991A18600E461B2 /* Build configuration list for PBXNativeTarget "mytodoTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +507,7 @@
 				844B31041991A18600E461B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
