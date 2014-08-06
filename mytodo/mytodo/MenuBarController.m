@@ -11,7 +11,6 @@
 
 #define STATUS_ITEM_VIEW_WIDTH 24.0
 
-
 @implementation MenuBarController
 @synthesize statusItemView;
 @synthesize todoListWindowController;
@@ -21,13 +20,15 @@
 {
     self = [super init];
     if (self) {
-
+        
         NSStatusItem *statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:STATUS_ITEM_VIEW_WIDTH];
         statusItemView = [[StatusItemView alloc] initWithStatusItem:statusItem];
         [statusItemView setImageDefault:[NSImage imageNamed:@"icon"]];
         
         statusItemView.action = @selector(openTodoListPanel:);
         statusItemView.target = self;
+        
+   
         
     }
     return self;
@@ -36,27 +37,55 @@
 - (void) openTodoListPanel:(id) sender {
     
     
+   // [self clearTask];
+    
     CGRect eventFrame = [[[NSApp currentEvent] window] frame];
     CGPoint eventOrigin = eventFrame.origin;
-    CGSize eventSize = eventFrame.size;
-    CGRect windowFrame = todoListWindowController.window.frame;
-    CGSize windowSize = windowFrame.size;
-    CGPoint windowTopLeftPosition = CGPointMake(eventOrigin.x + eventSize.width/2.f - windowSize.width/2.f, eventOrigin.y - 20);
+    CGPoint windowTopLeftPosition = CGPointMake(eventOrigin.x, eventOrigin.y);
     todoListWindowController = [[TodoListWindowController alloc] initWithData:[self fetchAll]];
-
+    todoListWindowController.delegate = self;
     [todoListWindowController.window setFrameTopLeftPoint:windowTopLeftPosition];
-    [todoListWindowController.window makeKeyAndOrderFront:self];
+   // [todoListWindowController.window makeKeyAndOrderFront:self];
     
-    [NSApp activateIgnoringOtherApps:YES];
+    
+    /*
+    [todoListWindowController.window performSelector:@selector(makeFirstResponder:) withObject:todoListWindowController.todoView.textField afterDelay:2.f];
+    
+    */
+    
+    //[NSApp activateIgnoringOtherApps:YES];
 
 }
 
 -(NSArray*) fetchAll {
     
+
+    NSLog(@"FETCH IT");
+    
+    NSFetchRequest * fetchRequestGroup = [[NSFetchRequest alloc] init];
+    [fetchRequestGroup setEntity:[NSEntityDescription entityForName:@"Task" inManagedObjectContext:managedObjectContext]];
+    
+    NSSortDescriptor *sortByName = [[NSSortDescriptor alloc] initWithKey:@"dateTask" ascending:NO];
+    [fetchRequestGroup setSortDescriptors:[NSArray arrayWithObject:sortByName]];
+    
+    NSError *error = nil;
+    NSArray * group = [managedObjectContext executeFetchRequest:fetchRequestGroup error:&error];
+
+    //NSLog(@"%@", [group debugDescription]);
+    
+    return group;
+}
+
+
+- (void)mouseDown:(NSEvent *)theEvent {
+    NSLog(@"mdddd");
+}
+
+- (void) addTask:(NSString *)title {
     Task* task = [NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:managedObjectContext];
     
-    [task setNameTask:@"task1"];
-    
+    [task setNameTask:title];
+    [task setDateTask:[NSDate date]];
     
     NSError *error = nil;
     [managedObjectContext save:&error];
@@ -65,23 +94,27 @@
     }
     else {
         NSLog(@"ok j'ai saved");
+        [todoListWindowController setDataTask:[self fetchAll]];
+        [todoListWindowController.todoView.todoTableView reloadData];
+        [todoListWindowController.todoView.todoTableView scrollRowToVisible:0];
     }
     
-    NSLog(@"FETCH IT");
+
+}
+
+
+- (void) clearTask {
     
     NSFetchRequest * fetchRequestGroup = [[NSFetchRequest alloc] init];
     [fetchRequestGroup setEntity:[NSEntityDescription entityForName:@"Task" inManagedObjectContext:managedObjectContext]];
-    
-    NSSortDescriptor *sortByName = [[NSSortDescriptor alloc] initWithKey:@"nameTask" ascending:YES];
-    [fetchRequestGroup setSortDescriptors:[NSArray arrayWithObject:sortByName]];
-    
-    error = nil;
+    [fetchRequestGroup setIncludesPropertyValues:NO];
+    NSError * error = nil;
     NSArray * group = [managedObjectContext executeFetchRequest:fetchRequestGroup error:&error];
-
-    //NSLog(@"%@", [group debugDescription]);
     
-    return group;
+    [group enumerateObjectsUsingBlock:^(id singleGroup, NSUInteger idx, BOOL *stop) {
+        [managedObjectContext deleteObject:singleGroup];
+    }];
+    
 }
-
 
 @end

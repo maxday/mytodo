@@ -1,18 +1,18 @@
 //
-//  Task.m
+//  CustomWindow.m
 //  mytodo
 //
 //  Created by maxday on 2014-08-05.
 //  Copyright (c) 2014 MaximeDavid. All rights reserved.
 //
 
-#import "Task.h"
+#import "CustomWindow.h"
 
+@implementation CustomWindow
 
-@implementation Task
-
-@dynamic idTask;
-@dynamic nameTask;
-@dynamic dateTask;
+- (BOOL)canBecomeKeyWindow
+{
+    return YES;
+}
 
 @end

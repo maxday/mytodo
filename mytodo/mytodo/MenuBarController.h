@@ -10,7 +10,7 @@
 #import "StatusItemView.h"
 #import "TodoListWindowController.h"
 
-@interface MenuBarController : NSObject
+@interface MenuBarController : NSObject <AddTaskDelegate>
 
 @property (nonatomic, retain) StatusItemView* statusItemView;
 

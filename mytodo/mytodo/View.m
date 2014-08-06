@@ -7,6 +7,7 @@
 //
 
 #import "View.h"
+#import "Constants.h"
 
 @implementation View
 @synthesize textField;
@@ -17,28 +18,41 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        textField = [[NSTextField alloc] initWithFrame:frame];
-        [textField setBackgroundColor:[NSColor redColor]];
-        [textField setStringValue:@"COUCOU"];
-        //[self addSubview:textField];
+        textField = [[NSTextField alloc] initWithFrame:CGRectMake(NEW_TASK_PADDING, TABLE_HEIGHT+20, POPUP_WIDTH-2*NEW_TASK_PADDING, 40)];
+        [textField.cell setPlaceholderString:@"Enter a new task"];
         
-        todoTableView = [[NSTableView alloc] initWithFrame:frame];
+        
+       // [textField setFont:[NSFont fontWithName:@"HelveticaNeue-Light" size:13]];
+        [textField setAlignment:kCTTextAlignmentCenter];
+        
+        
+        [textField setBezelStyle:NSTextFieldRoundedBezel];
+        
+        [self addSubview:textField];
+        
+        
         
         NSTableColumn* column1 = [[NSTableColumn alloc] initWithIdentifier:@"Col1"];
-        [column1 setWidth:0.95*frame.size.width];
+        [column1 setWidth:frame.size.width];
+        
+        
+        
+        
+        
+        NSScrollView* scrollView = [[NSScrollView alloc] initWithFrame:CGRectMake(0, 0, TABLE_HEIGHT+15, POPUP_WIDTH)];
+        
+        todoTableView = [[NSTableView alloc] initWithFrame:scrollView.bounds];
         [todoTableView addTableColumn:column1];
         
-       // [self addSubview:todoTableView];
-        [todoTableView setBackgroundColor:[NSColor greenColor]];
+        
+        
+        
+        [todoTableView setBackgroundColor:[NSColor colorWithCalibratedRed:239./255 green:240./255 blue:242./255 alpha:1]];
         [todoTableView setHeaderView:nil];
-        
-        
-        
-        
-        NSScrollView* scrollView = [[NSScrollView alloc] initWithFrame:frame];
+
         
         [scrollView setDocumentView: todoTableView];
-        [scrollView setHasVerticalScroller:YES];
+        [scrollView setHasVerticalScroller:NO];
    
         [self addSubview:scrollView];
         
@@ -47,14 +61,9 @@
     }
     return self;
 }
-
 - (void) drawRect:(NSRect)dirtyRect {
-    [super drawRect:dirtyRect];
-    
-    // This next line sets the the current fill color parameter of the Graphics Context
-    [[NSColor whiteColor] setFill];
-    // This next function fills a rect the same as dirtyRect with the current fill color of the Graphics Context.
+    [[NSColor colorWithCalibratedRed:239./255 green:240./255 blue:242./255 alpha:1] set];
     NSRectFill(dirtyRect);
-    // You might want to use _bounds or self.bounds if you want to be sure to fill the entire bounds rect of the view.
 }
+
 @end

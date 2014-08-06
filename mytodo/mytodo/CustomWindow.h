@@ -1,18 +1,13 @@
 //
-//  Task.m
+//  CustomWindow.h
 //  mytodo
 //
 //  Created by maxday on 2014-08-05.
 //  Copyright (c) 2014 MaximeDavid. All rights reserved.
 //
 
-#import "Task.h"
+#import <Cocoa/Cocoa.h>
 
-
-@implementation Task
-
-@dynamic idTask;
-@dynamic nameTask;
-@dynamic dateTask;
+@interface CustomWindow : NSWindow
 
 @end

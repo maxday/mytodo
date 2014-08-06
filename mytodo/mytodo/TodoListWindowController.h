@@ -9,11 +9,19 @@
 #import <Cocoa/Cocoa.h>
 #include "View.h"
 
-@interface TodoListWindowController : NSWindowController <NSWindowDelegate, NSTableViewDataSource, NSTableViewDelegate>
+@protocol AddTaskDelegate <NSObject>
+
+@required
+- (void) addTask:(NSString *) title;
+
+@end
+
+@interface TodoListWindowController : NSWindowController <NSWindowDelegate, NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate>
 
 @property (nonatomic, retain) View* todoView;
 @property (nonatomic, retain) NSArray* dataTask;
 
+@property (weak, nonatomic) id delegate;
 
 
 

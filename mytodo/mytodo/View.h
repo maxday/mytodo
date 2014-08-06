@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+
 @interface View : NSView
 
 @property(nonatomic, retain) NSTextField* textField;

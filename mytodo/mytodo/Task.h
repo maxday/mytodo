@@ -14,5 +14,6 @@
 
 @property (nonatomic, retain) NSNumber * idTask;
 @property (nonatomic, retain) NSString * nameTask;
+@property (nonatomic, retain) NSDate * dateTask;
 
 @end
