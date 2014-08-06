@@ -24,16 +24,8 @@
 @property (nonatomic, retain) NSArray* dataTask;
 
 @property (weak, nonatomic) id delegate;
+@property(nonatomic, retain) NSArray* colorArray;
 
-
-
-@property (readwrite) BOOL openPanel;
-
-
-
-
-
-- (void)openTodoPanel;
 - (id)initWithData:(NSArray*) data;
 
 @end

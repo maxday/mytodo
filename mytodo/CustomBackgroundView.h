@@ -8,10 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface CustomBackgroundView : NSView {
-    NSColor *background;
-}
+@interface CustomBackgroundView : NSView
 
-@property(retain) NSColor *background;
+@property(nonatomic, retain) NSColor *background;
 
 @end

@@ -11,14 +11,13 @@
 @implementation CustomBackgroundView
 @synthesize background;
 
-- (void)drawRect:(NSRect)rect
-{
+- (void)drawRect:(NSRect)rect{
     [background set];
     NSRectFill([self bounds]);
 }
 
-- (void)changeColor:(NSColor*) aColor
-{
+- (void)changeColor:(NSColor*) aColor{
     background = aColor;
 }
+
 @end

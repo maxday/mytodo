@@ -29,7 +29,6 @@
 		847C16B31991F87700729F9E /* CustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C16B21991F87700729F9E /* CustomWindow.m */; };
 		847C16BA199208C300729F9E /* TableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C16B9199208C300729F9E /* TableCellView.m */; };
 		847C16BD1992112200729F9E /* CustomBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C16BC1992112200729F9E /* CustomBackgroundView.m */; };
-		847C16C01992137900729F9E /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C16BF1992137900729F9E /* CustomTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,8 +81,6 @@
 		847C16B9199208C300729F9E /* TableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableCellView.m; path = ../TableCellView.m; sourceTree = "<group>"; };
 		847C16BB1992112200729F9E /* CustomBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomBackgroundView.h; path = ../CustomBackgroundView.h; sourceTree = "<group>"; };
 		847C16BC1992112200729F9E /* CustomBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomBackgroundView.m; path = ../CustomBackgroundView.m; sourceTree = "<group>"; };
-		847C16BE1992137900729F9E /* CustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTextField.h; path = ../CustomTextField.h; sourceTree = "<group>"; };
-		847C16BF1992137900729F9E /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTextField.m; path = ../CustomTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,32 +146,18 @@
 		847C16251991BCC600729F9E /* mytodo */ = {
 			isa = PBXGroup;
 			children = (
-				847C16B8199208C300729F9E /* TableCellView.h */,
-				847C16B9199208C300729F9E /* TableCellView.m */,
-				847C16BE1992137900729F9E /* CustomTextField.h */,
-				847C16BF1992137900729F9E /* CustomTextField.m */,
-				847C16BB1992112200729F9E /* CustomBackgroundView.h */,
-				847C16BC1992112200729F9E /* CustomBackgroundView.m */,
+				847C16C71992A88F00729F9E /* models */,
+				847C16C61992A6EE00729F9E /* controllers */,
+				847C16C51992A6E300729F9E /* views */,
+				847C16C41992A6A100729F9E /* custom */,
 				847C16531991BD1900729F9E /* icons */,
-				847C16561991BD1900729F9E /* MenuBarController.h */,
-				847C16571991BD1900729F9E /* MenuBarController.m */,
-				847C16621991C1E100729F9E /* TodoListWindowController.h */,
-				847C16631991C1E100729F9E /* TodoListWindowController.m */,
-				847C16B11991F87700729F9E /* CustomWindow.h */,
-				847C16B21991F87700729F9E /* CustomWindow.m */,
-				847C16651991C40800729F9E /* View.h */,
-				847C16661991C40800729F9E /* View.m */,
 				847C16B71992032E00729F9E /* Constants.h */,
-				847C16581991BD1900729F9E /* StatusItemView.h */,
-				847C16591991BD1900729F9E /* StatusItemView.m */,
 				847C16311991BCC600729F9E /* AppDelegate.h */,
 				847C16321991BCC600729F9E /* AppDelegate.m */,
 				847C16341991BCC600729F9E /* MainMenu.xib */,
 				847C16371991BCC600729F9E /* Images.xcassets */,
 				847C16261991BCC600729F9E /* Supporting Files */,
 				847C16AB1991E79000729F9E /* mytodo.xcdatamodeld */,
-				847C16AE1991E84400729F9E /* Task.h */,
-				847C16AF1991E84400729F9E /* Task.m */,
 			);
 			path = mytodo;
 			sourceTree = "<group>";
@@ -216,6 +199,50 @@
 				847C165F1991C10400729F9E /* icon@2x.png */,
 			);
 			path = icons;
+			sourceTree = "<group>";
+		};
+		847C16C41992A6A100729F9E /* custom */ = {
+			isa = PBXGroup;
+			children = (
+				847C16B11991F87700729F9E /* CustomWindow.h */,
+				847C16B21991F87700729F9E /* CustomWindow.m */,
+				847C16BB1992112200729F9E /* CustomBackgroundView.h */,
+				847C16BC1992112200729F9E /* CustomBackgroundView.m */,
+			);
+			name = custom;
+			sourceTree = "<group>";
+		};
+		847C16C51992A6E300729F9E /* views */ = {
+			isa = PBXGroup;
+			children = (
+				847C16581991BD1900729F9E /* StatusItemView.h */,
+				847C16591991BD1900729F9E /* StatusItemView.m */,
+				847C16651991C40800729F9E /* View.h */,
+				847C16661991C40800729F9E /* View.m */,
+				847C16B8199208C300729F9E /* TableCellView.h */,
+				847C16B9199208C300729F9E /* TableCellView.m */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		847C16C61992A6EE00729F9E /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				847C16561991BD1900729F9E /* MenuBarController.h */,
+				847C16571991BD1900729F9E /* MenuBarController.m */,
+				847C16621991C1E100729F9E /* TodoListWindowController.h */,
+				847C16631991C1E100729F9E /* TodoListWindowController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		847C16C71992A88F00729F9E /* models */ = {
+			isa = PBXGroup;
+			children = (
+				847C16AE1991E84400729F9E /* Task.h */,
+				847C16AF1991E84400729F9E /* Task.m */,
+			);
+			name = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,7 +349,6 @@
 				847C165D1991BD1900729F9E /* StatusItemView.m in Sources */,
 				847C16BD1992112200729F9E /* CustomBackgroundView.m in Sources */,
 				847C16671991C40800729F9E /* View.m in Sources */,
-				847C16C01992137900729F9E /* CustomTextField.m in Sources */,
 				847C16AD1991E79000729F9E /* mytodo.xcdatamodeld in Sources */,
 				847C16B01991E84400729F9E /* Task.m in Sources */,
 				847C16641991C1E100729F9E /* TodoListWindowController.m in Sources */,

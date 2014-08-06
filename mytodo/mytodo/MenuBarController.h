@@ -13,11 +13,8 @@
 @interface MenuBarController : NSObject <AddTaskDelegate>
 
 @property (nonatomic, retain) StatusItemView* statusItemView;
-
 @property (nonatomic, retain) TodoListWindowController* todoListWindowController;
-
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
 @property (readwrite) BOOL isOpen;
 
 @end
