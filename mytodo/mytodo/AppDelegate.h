@@ -7,9 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#include "MenuBarController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (nonatomic, strong) MenuBarController *menuBarController;
 
 @end

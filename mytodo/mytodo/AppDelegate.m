@@ -9,10 +9,11 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+@synthesize menuBarController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+       self.menuBarController = [[MenuBarController alloc] init];
 }
 
 @end

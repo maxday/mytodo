@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "StatusItemView.h"
+#import "TodoListWindowController.h"
 
 @interface MenuBarController : NSObject
 
 @property (nonatomic, retain) StatusItemView* statusItemView;
+
+@property (nonatomic, retain) TodoListWindowController* todoListWindowController;
 
 @end
