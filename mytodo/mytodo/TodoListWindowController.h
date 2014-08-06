@@ -8,11 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 #include "View.h"
+#include "Task.h"
 
 @protocol AddTaskDelegate <NSObject>
 
 @required
 - (void) addTask:(NSString *) title;
+- (void) removeTask:(Task *) task;
 
 @end
 
@@ -26,6 +28,7 @@
 
 
 @property (readwrite) BOOL openPanel;
+
 
 
 

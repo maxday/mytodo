@@ -50,6 +50,9 @@
         todoView.todoTableView.delegate = self;
         todoView.todoTableView.dataSource = self;
         
+        
+        [todoView.todoTableView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone];
+        
         [todoView.textField setEnabled:YES];
         [todoView.textField setEditable:YES];
         
@@ -138,10 +141,25 @@
     [super windowDidLoad];
     
 
+
     
 
 
+    
 }
+
+
+
+
+
+-(BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row{
+    
+    [self.delegate removeTask:[dataTask objectAtIndex:row]];
+
+    return NO;
+    
+}
+
 
 
 

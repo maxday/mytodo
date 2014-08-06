@@ -15,6 +15,7 @@
 @synthesize statusItemView;
 @synthesize todoListWindowController;
 @synthesize managedObjectContext;
+@synthesize isOpen;
 
 - (id)init
 {
@@ -28,6 +29,7 @@
         statusItemView.action = @selector(openTodoListPanel:);
         statusItemView.target = self;
         
+        isOpen = NO;
    
         
     }
@@ -36,6 +38,13 @@
 
 - (void) openTodoListPanel:(id) sender {
     
+    if(isOpen) {
+        todoListWindowController = nil;
+        isOpen = NO;
+        return;
+    }
+    
+    isOpen = YES;
     
    // [self clearTask];
     
@@ -45,15 +54,18 @@
     todoListWindowController = [[TodoListWindowController alloc] initWithData:[self fetchAll]];
     todoListWindowController.delegate = self;
     [todoListWindowController.window setFrameTopLeftPoint:windowTopLeftPosition];
-   // [todoListWindowController.window makeKeyAndOrderFront:self];
+   
+    
+    [todoListWindowController.window makeKeyAndOrderFront:self];
+    
+
+    [todoListWindowController.window performSelector:@selector(makeFirstResponder:) withObject:todoListWindowController.todoView.textField];
     
     
-    /*
-    [todoListWindowController.window performSelector:@selector(makeFirstResponder:) withObject:todoListWindowController.todoView.textField afterDelay:2.f];
     
-    */
+    [NSApp activateIgnoringOtherApps:YES];
     
-    //[NSApp activateIgnoringOtherApps:YES];
+    
 
 }
 
@@ -84,8 +96,14 @@
 - (void) addTask:(NSString *)title {
     Task* task = [NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:managedObjectContext];
     
-    [task setNameTask:title];
+    if(title.length > 15)
+        title = [title substringToIndex:15];
+    
+
+    
+    [task setNameTask:[NSString stringWithFormat:@" %@", title]];
     [task setDateTask:[NSDate date]];
+    [task setIdTask:[NSNumber numberWithInt:arc4random()]];
     
     NSError *error = nil;
     [managedObjectContext save:&error];
@@ -114,6 +132,26 @@
     [group enumerateObjectsUsingBlock:^(id singleGroup, NSUInteger idx, BOOL *stop) {
         [managedObjectContext deleteObject:singleGroup];
     }];
+    
+}
+
+
+- (void) removeTask:(Task *)task {
+    
+    NSFetchRequest * fetchRequestGroup = [[NSFetchRequest alloc] init];
+    [fetchRequestGroup setEntity:[NSEntityDescription entityForName:@"Task" inManagedObjectContext:managedObjectContext]];
+    [fetchRequestGroup setIncludesPropertyValues:NO];
+    NSError * error = nil;
+    NSArray * group = [managedObjectContext executeFetchRequest:fetchRequestGroup error:&error];
+    
+    [group enumerateObjectsUsingBlock:^(id singleGroup, NSUInteger idx, BOOL *stop) {
+        Task* taskCast = (Task*) singleGroup;
+        if([taskCast.idTask isEqualTo:task.idTask])
+            [managedObjectContext deleteObject:singleGroup];
+    }];
+    
+    [todoListWindowController setDataTask:[self fetchAll]];
+    [todoListWindowController.todoView.todoTableView reloadData];
     
 }
 

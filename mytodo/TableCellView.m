@@ -25,6 +25,7 @@
         [tf setBackgroundColor:[NSColor colorWithCalibratedRed:189./255 green:195./255 blue:199./255 alpha:1]];
         
 
+        [tf setEnabled:NO];
         [self addSubview:tf];
         [self addSubview:borderLeft];
         
@@ -34,6 +35,9 @@
     }
     return self;
 }
+
+
+
 
 
 

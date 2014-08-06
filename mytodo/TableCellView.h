@@ -12,6 +12,6 @@
 @interface TableCellView : NSTableRowView
 
 @property(nonatomic, retain) NSTextField* tf;
-@property(nonatomic, retain) CustomBackgroundView* borderLeft;
+@property(nonatomic, retain) NSView* borderLeft;
 
 @end

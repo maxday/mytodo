@@ -56,6 +56,9 @@
    
         [self addSubview:scrollView];
         
+       
+        
+
         
         
     }
@@ -65,5 +68,6 @@
     [[NSColor colorWithCalibratedRed:239./255 green:240./255 blue:242./255 alpha:1] set];
     NSRectFill(dirtyRect);
 }
+
 
 @end
